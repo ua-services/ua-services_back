@@ -38,7 +38,6 @@ group :development, :test do
   gem 'pry-byebug', '~> 3.9.0'
   gem 'pry-rails', '~> 0.3.9'
   gem 'pry-rescue', '~> 1.5.0'
-  gem 'pry-stack_explorer', '~> 0.4.9.3'
 end
 
 group :development do
