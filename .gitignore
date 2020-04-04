@@ -23,3 +23,7 @@
 
 #Ignore .idea folder
 .idea/*
+
+/config/credentials/production.key
+
+/config/credentials/development.key
