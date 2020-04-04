@@ -1,6 +1,6 @@
 require 'rubygems'
 require 'database_cleaner'
-# TODO: require 'devise/jwt/test_helpers' when devise is added
+require 'devise/jwt/test_helpers'
 ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../config/environment', __dir__)
 require 'rspec/rails'
