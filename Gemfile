@@ -30,7 +30,7 @@ gem 'rack-cors', '~> 1.0.6'
 # Fake-data generator
 gem 'faker', '~> 2.2.1'
 
-#Fetching env variables
+# Fetching env variables
 gem 'r_creds', '~> 1.0.1'
 
 group :development, :test do
