@@ -81,5 +81,3 @@ test:
 production:
   <<: *default
   database: ua_services_back_production
-  username: ua_services_back
-  password: <%= ENV['UA_SERVICES_BACK_DATABASE_PASSWORD'] %>
