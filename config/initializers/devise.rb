@@ -4,7 +4,7 @@
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
   config.jwt do |jwt|
-    jwt.secret = RCreds.fetch(:devise_jwt_secret_key)
+    jwt.secret = RCreds.fetch(:secret_key_base)
   end
 
     # The secret key used by Devise. Devise uses this key to generate
