@@ -9,9 +9,16 @@ class Users::SessionsController < Devise::SessionsController
   # end
 
   # POST /resource/sign_in
-  # def create
-  #   super
-  # end
+  # TODO refactor
+  def create
+    self.resource = warden.authenticate!(auth_options)
+    set_flash_message!(:notice, :signed_in)
+    sign_in(resource_name, resource)
+    yield resource if block_given?
+    user = JSON.parse(resource.to_json)
+    user['token'] = current_token
+    respond_with user, location: after_sign_in_path_for(resource)
+  end
 
   # DELETE /resource/sign_out
   # def destroy
@@ -24,4 +31,10 @@ class Users::SessionsController < Devise::SessionsController
   # def configure_sign_in_params
   #   devise_parameter_sanitizer.permit(:sign_in, keys: [:attribute])
   # end
+
+  private
+
+  def current_token
+    request.env['warden-jwt_auth.token']
+  end
 end
