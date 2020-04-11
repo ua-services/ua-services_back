@@ -3,6 +3,7 @@ class Api::V1::UsersController < Api::BaseController
   before_action :resource, only: %i[show update destroy]
 
   def index
+    authorize resources
     json_response(resources)
   end
 
