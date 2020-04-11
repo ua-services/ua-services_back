@@ -8,15 +8,18 @@ class Api::V1::UsersController < Api::BaseController
   end
 
   def show
+    authorize resource
     json_response(resource)
   end
 
   def update
+    authorize resource
     resource.update(user_params)
-    head :no_content
+    json_response(resource)
   end
 
   def destroy
+    authorize resource
     resource.destroy
     head :no_content
   end
