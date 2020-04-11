@@ -4,5 +4,6 @@ User.create(
     last_name: 'Verhnia',
     email: 'wykola@gmail.com',
     password: 'wykola',
-    password_confirmation: 'wykola'
+    password_confirmation: 'wykola',
+    role: 'consumer'
 )
