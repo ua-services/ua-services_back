@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_11_203631) do
+ActiveRecord::Schema.define(version: 2020_04_11_205524) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,8 +20,14 @@ ActiveRecord::Schema.define(version: 2020_04_11_203631) do
     t.string "address"
     t.string "phone_number"
     t.string "service_industry"
-    t.string "lng"
-    t.string "lat"
+    t.float "lng"
+    t.float "lat"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "agency_employees", force: :cascade do |t|
+    t.integer "agency_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -29,7 +35,11 @@ ActiveRecord::Schema.define(version: 2020_04_11_203631) do
   create_table "employees", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "agency_id"
+  end
+
+  create_table "individual_employees", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "jwt_blacklist", force: :cascade do |t|

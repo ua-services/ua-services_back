@@ -5,8 +5,8 @@ class CreateAgencies < ActiveRecord::Migration[6.0]
       t.string :address
       t.string :phone_number
       t.string :service_industry
-      t.string :lng
-      t.string :lat
+      t.float :lng
+      t.float :lat
 
       t.timestamps
     end

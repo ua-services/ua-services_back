@@ -1,0 +1,2 @@
+class IndividualEmployee < Employee
+end
