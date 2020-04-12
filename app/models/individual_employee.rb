@@ -1,2 +1,0 @@
-class IndividualEmployee < Employee
-end

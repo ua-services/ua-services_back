@@ -26,24 +26,14 @@ ActiveRecord::Schema.define(version: 2020_04_11_222924) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "agency_employee_informations", force: :cascade do |t|
-    t.integer "agency_employee_id", null: false
-    t.integer "agency_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "agency_employees", force: :cascade do |t|
+  create_table "employee_informations", force: :cascade do |t|
+    t.integer "employee_id", null: false
+    t.integer "agency_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "employees", force: :cascade do |t|
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "individual_employees", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
