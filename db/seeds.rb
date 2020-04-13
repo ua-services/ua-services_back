@@ -1,13 +1,11 @@
 # Agency
-Agency.create(name: 'Gurau', phone_number: '+380991231238', address: 'IF', service_industry: 'massage')
-
-# Seed user
-Employee.create(
-  first_name: 'Wykola',
-  last_name: 'Verhnia',
-  email: 'consumerf329393@gmail.com',
-  password: 'wykola',
-  password_confirmation: 'wykola',
-  role: 'agency_employee',
-  employee_information_attributes: { agency: Agency.first }
+Agency.create(
+    name: 'Test Agency',
+    address: 'IF',
+    phone_number: '+380991231238',
+    service_industry: 'Massage',
+    email: 'test_agency@gmail.com',
+    short_description: 'Best massage in IF',
+    lng: 12.43,
+    lat: 17.54
 )
