@@ -1,20 +1,25 @@
+# Employee actions
 class Api::V1::EmployeesController < Api::BaseController
   before_action :resources, only: [:index]
   before_action :resource, only: %i[show update destroy]
 
+  # Employees listing
   def index
     json_response(resources)
   end
 
+  # Detailed employee information
   def show
     json_response(resource)
   end
 
+  # Update employee information
   def update
     resource.update(employee_params)
     json_response(resource)
   end
 
+  # Destroy employee
   def destroy
     resource.destroy
     head :no_content

@@ -1,25 +1,31 @@
+# Agency actions
 class Api::V1::AgenciesController < Api::BaseController
   before_action :resources, only: [:index]
   before_action :resource, only: %i[show update destroy]
 
+  # Agency listing
   def index
     json_response(resources)
   end
 
+  # Create agency
   def create
     resource = Agency.create(agency_params)
     json_response(resource)
   end
 
+  # Detailed agency information
   def show
     json_response(resource)
   end
 
+  # Update agency information
   def update
     resource.update(agency_params)
     json_response(resource)
   end
 
+  # Delete agency
   def destroy
     resource.destroy
     head :no_content
