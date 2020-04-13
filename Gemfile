@@ -42,6 +42,9 @@ gem 'r_creds', '~> 1.0.1'
 # Serializer
 gem 'blueprinter', '~> 0.23.3'
 
+# Docs
+gem 'yard', '~> 0.9.22'
+
 group :development, :test do
   gem 'dotenv-rails', '~> 2.7.5'
   gem 'factory_bot_rails', '~> 5.1.1'
