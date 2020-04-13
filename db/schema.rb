@@ -20,6 +20,8 @@ ActiveRecord::Schema.define(version: 2020_04_11_222924) do
     t.string "address"
     t.string "phone_number"
     t.string "service_industry"
+    t.string "email"
+    t.string "short_description"
     t.float "lng"
     t.float "lat"
     t.datetime "created_at", precision: 6, null: false
