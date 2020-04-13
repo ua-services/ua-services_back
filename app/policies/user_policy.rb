@@ -17,7 +17,7 @@ class UserPolicy < ApplicationPolicy
     user
   end
 
-  def destroy
+  def destroy?
     user
   end
 end
