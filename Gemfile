@@ -45,6 +45,9 @@ gem 'blueprinter', '~> 0.23.3'
 # Docs
 gem 'yard', '~> 0.9.22'
 
+# Soft-delete
+gem 'acts_as_paranoid', '~> 0.6.3'
+
 group :development, :test do
   gem 'dotenv-rails', '~> 2.7.5'
   gem 'factory_bot_rails', '~> 5.1.1'
