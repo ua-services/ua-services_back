@@ -56,6 +56,9 @@ GEM
       minitest (~> 5.1)
       tzinfo (~> 1.1)
       zeitwerk (~> 2.2)
+    acts_as_paranoid (0.6.3)
+      activerecord (>= 4.2, < 7.0)
+      activesupport (>= 4.2, < 7.0)
     ast (2.4.0)
     bcrypt (3.1.13)
     better_errors (2.6.0)
@@ -278,6 +281,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  acts_as_paranoid (~> 0.6.3)
   better_errors (~> 2.6.0)
   binding_of_caller (~> 0.8.0)
   blueprinter (~> 0.23.3)
