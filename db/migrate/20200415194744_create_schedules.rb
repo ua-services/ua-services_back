@@ -7,6 +7,7 @@ class CreateSchedules < ActiveRecord::Migration[6.0]
       t.datetime :end_lunch_time
       t.datetime :deleted_at
       t.references :schedulable, polymorphic: true
+
       t.timestamps
     end
 
