@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_15_191519) do
+ActiveRecord::Schema.define(version: 2020_04_15_194744) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,6 +50,20 @@ ActiveRecord::Schema.define(version: 2020_04_15_191519) do
     t.string "jti", null: false
     t.datetime "exp", null: false
     t.index ["jti"], name: "index_jwt_blacklist_on_jti"
+  end
+
+  create_table "schedules", force: :cascade do |t|
+    t.datetime "start_working_time"
+    t.datetime "end_working_time"
+    t.datetime "start_lunch_time"
+    t.datetime "end_lunch_time"
+    t.datetime "deleted_at"
+    t.string "schedulable_type"
+    t.bigint "schedulable_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["deleted_at"], name: "index_schedules_on_deleted_at"
+    t.index ["schedulable_type", "schedulable_id"], name: "index_schedules_on_schedulable_type_and_schedulable_id"
   end
 
   create_table "users", force: :cascade do |t|
