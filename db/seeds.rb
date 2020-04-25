@@ -5,7 +5,7 @@ Agency.create(
     phone_number: '+380991231238',
     service_industry: 'Massage',
     email: 'best_massage@gmail.com',
-    short_description: 'Best massage in IF',
+    description: 'Best massage in IF',
     lng: 12.43,
     lat: 17.54
 )

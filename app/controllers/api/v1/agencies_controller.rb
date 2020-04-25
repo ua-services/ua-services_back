@@ -34,7 +34,7 @@ class Api::V1::AgenciesController < Api::BaseController
   private
 
   def agency_params
-    params.permit(:name, :address, :phone_number, :service_industry, :email, :short_description, :lng, :lat)
+    params.permit(:name, :address, :phone_number, :service_industry, :email, :description, :lng, :lat)
   end
 
   def resources

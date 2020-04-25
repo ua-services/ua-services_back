@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 2020_04_16_183256) do
     t.string "phone_number"
     t.string "service_industry"
     t.string "email"
-    t.string "short_description"
+    t.string "description"
     t.float "lng"
     t.float "lat"
     t.datetime "created_at", precision: 6, null: false

@@ -3,7 +3,7 @@ class AgencyBlueprint < Blueprinter::Base
 
   view :normal do
     fields :name, :address, :phone_number, :service_industry, :email,
-           :short_description, :lng, :lat, :created_at, :updated_at
+           :description, :lng, :lat, :created_at, :updated_at
   end
 
   view :extended do
