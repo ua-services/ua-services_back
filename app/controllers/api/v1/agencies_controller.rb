@@ -5,24 +5,24 @@ class Api::V1::AgenciesController < Api::BaseController
 
   # Agency listing
   def index
-    json_response(resources)
+    json_response(AgencyBlueprint.render(resources, view: :normal))
   end
 
   # Create agency
   def create
     resource = Agency.create(agency_params)
-    json_response(resource)
+    json_response(AgencyBlueprint.render(resource, view: :normal))
   end
 
   # Detailed agency information
   def show
-    json_response(resource)
+    json_response(AgencyBlueprint.render(resource, view: :normal))
   end
 
   # Update agency information
   def update
     resource.update(agency_params)
-    json_response(resource)
+    json_response(AgencyBlueprint.render(resource, view: :normal))
   end
 
   # Delete agency

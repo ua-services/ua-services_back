@@ -47,3 +47,15 @@ Employee.create(
     role: 'agency_employee',
     agency: Agency.first
 )
+
+# Individual Employee
+Employee.create(
+    first_name: 'Individual',
+    last_name: 'Employee',
+    email: 'individualemployee@gmail.com',
+    password: 'individualemployee',
+    password_confirmation: 'individualemployee',
+    address: 'IF',
+    phone_number: '+380964483927',
+    role: 'individual_employee'
+)

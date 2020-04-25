@@ -42,9 +42,6 @@ gem 'r_creds', '~> 1.0.1'
 # Serializer
 gem 'blueprinter', '~> 0.23.3'
 
-# Docs
-gem 'yard', '~> 0.9.22'
-
 # Soft-delete
 gem 'acts_as_paranoid', '~> 0.6.3'
 
