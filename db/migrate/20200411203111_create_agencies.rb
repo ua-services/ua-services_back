@@ -9,6 +9,7 @@ class CreateAgencies < ActiveRecord::Migration[6.0]
       t.string :description
       t.float :lng
       t.float :lat
+      t.integer :owner_id, foreign_key: true
 
       t.timestamps
     end

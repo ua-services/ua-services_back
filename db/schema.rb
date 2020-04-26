@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 2020_04_16_183256) do
     t.string "description"
     t.float "lng"
     t.float "lat"
+    t.integer "owner_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.datetime "deleted_at"
@@ -76,20 +77,6 @@ ActiveRecord::Schema.define(version: 2020_04_16_183256) do
     t.datetime "deleted_at"
     t.index ["deleted_at"], name: "index_jwt_blacklist_on_deleted_at"
     t.index ["jti"], name: "index_jwt_blacklist_on_jti"
-  end
-
-  create_table "schedules", force: :cascade do |t|
-    t.datetime "start_working_time"
-    t.datetime "end_working_time"
-    t.datetime "start_lunch_time"
-    t.datetime "end_lunch_time"
-    t.datetime "deleted_at"
-    t.string "schedulable_type"
-    t.bigint "schedulable_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["deleted_at"], name: "index_schedules_on_deleted_at"
-    t.index ["schedulable_type", "schedulable_id"], name: "index_schedules_on_schedulable_type_and_schedulable_id"
   end
 
   create_table "services", force: :cascade do |t|

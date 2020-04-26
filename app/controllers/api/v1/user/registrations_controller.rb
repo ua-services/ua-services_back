@@ -7,14 +7,17 @@ class Api::V1::User::RegistrationsController < Devise::RegistrationsController
   respond_to :json
 
   # GET /resource/sign_up
-  # def new
-  #   super
-  # end
+  def new
+    resource = build_resource
+    resource.build_own_agency
+
+    respond_with resource
+  end
 
   # POST /resource
-  # def create
-  #   super
-  # end
+  def create
+    super
+  end
 
   # GET /resource/edit
   # def edit
