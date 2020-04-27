@@ -2,7 +2,8 @@ class EmployeeInformation < ApplicationRecord
   belongs_to :employee
   belongs_to :agency, optional: true
 
-  validate :agency_is_present, if: -> { employee.agency_employee? || employee.agency_admin? }
+  # Todo check also on create someway
+  validate :agency_is_present, if: -> { employee.agency_employee? || employee.agency_admin? }, on: :update
 
   private
 

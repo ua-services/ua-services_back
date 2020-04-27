@@ -32,7 +32,7 @@ Employee.create(
     address: 'IF',
     phone_number: '+380964483927',
     role: 'agency_admin',
-    agency: Agency.first
+    own_agency_attributes: { name: 'Hairstyle' }
 )
 
 # Agency Employee

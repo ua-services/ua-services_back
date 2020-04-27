@@ -8,13 +8,19 @@ class Api::V1::User::RegistrationsController < Devise::RegistrationsController
 
   # GET /resource/sign_up
   # def new
-  #   super
+  #  super
   # end
 
   # POST /resource
-  # def create
-  #   super
-  # end
+  def create
+    super if sign_up_params[:role] == 'consumer'
+    if sign_up_params[:role] == 'agency_admin'
+      # TODO: raise error if without own_agency_attributes
+      resource = Employee.new(sign_up_params)
+      resource.save
+      respond_with resource, location: after_sign_up_path_for(resource)
+    end
+  end
 
   # GET /resource/edit
   # def edit
@@ -44,7 +50,21 @@ class Api::V1::User::RegistrationsController < Devise::RegistrationsController
 
   # If you have extra params to permit, append them to the sanitizer.
   def configure_sign_up_params
-    devise_parameter_sanitizer.permit(:sign_up, keys: %i[first_name last_name role address phone_number])
+    permitted_keys_based_on_role = define_permitted_keys(params[:user][:role])
+    devise_parameter_sanitizer.permit(:sign_up, keys: permitted_keys_based_on_role)
+  end
+
+  def define_permitted_keys(role)
+    case role
+    when 'consumer'
+      %i[first_name last_name role address phone_number password password_confirmation]
+    when 'agency_admin'
+      [:first_name, :last_name, :role, :address, :phone_number, :password, :password_confirmation,
+       own_agency_attributes: %i[name email]]
+    when 'individual_employee'
+      [:first_name, :last_name, :role, :address, :phone_number, :password, :password_confirmation,
+       own_agency_attributes: %i[name email]]
+    end
   end
 
   # If you have extra params to permit, append them to the sanitizer.
