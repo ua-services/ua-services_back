@@ -18,7 +18,6 @@ class Employee < User
   private
 
   def set_agency_if_agency_admin
-    byebug
     self.agency = own_agency
   end
 end
