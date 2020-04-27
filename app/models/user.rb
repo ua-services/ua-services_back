@@ -9,5 +9,6 @@ class User < ApplicationRecord
 
   enum role: %i[super_admin agency_admin agency_employee individual_employee consumer]
 
-  validates :first_name, :last_name, :role, presence: true
+  validates :first_name, :last_name, :role, :phone_number, presence: true
+  validates :email, uniqueness: true, email: true
 end
