@@ -12,15 +12,9 @@ class Api::V1::User::RegistrationsController < Devise::RegistrationsController
   # end
 
   # POST /resource
-  def create
-    super if sign_up_params[:role] == 'consumer'
-    if sign_up_params[:role] == 'agency_admin'
-      # TODO: raise error if without own_agency_attributes
-      resource = Employee.new(sign_up_params)
-      resource.save
-      respond_with resource, location: after_sign_up_path_for(resource)
-    end
-  end
+  # def create
+  #   super
+  # end
 
   # GET /resource/edit
   # def edit
@@ -57,13 +51,12 @@ class Api::V1::User::RegistrationsController < Devise::RegistrationsController
   def define_permitted_keys(role)
     case role
     when 'consumer'
-      %i[first_name last_name role address phone_number password password_confirmation]
+      %i[first_name last_name role address phone_number password password_confirmation type]
     when 'agency_admin'
       [:first_name, :last_name, :role, :address, :phone_number, :password, :password_confirmation,
-       own_agency_attributes: %i[name email]]
+       :type, own_agency_attributes: %i[name email]]
     when 'individual_employee'
-      [:first_name, :last_name, :role, :address, :phone_number, :password, :password_confirmation,
-       own_agency_attributes: %i[name email]]
+      %i[first_name last_name role address phone_number password password_confirmation type]
     end
   end
 
