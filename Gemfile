@@ -45,6 +45,11 @@ gem 'blueprinter', '~> 0.23.3'
 # Soft-delete
 gem 'acts_as_paranoid', '~> 0.6.3'
 
+# Files uploading
+gem 'carrierwave', '~> 2.0'
+gem 'fog', '~> 2.2.0'
+gem 'fog-core', '~> 2.1'
+
 group :development, :test do
   gem 'dotenv-rails', '~> 2.7.5'
   gem 'factory_bot_rails', '~> 5.1.1'
