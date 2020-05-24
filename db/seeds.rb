@@ -29,10 +29,8 @@ Employee.create(
     email: 'agencyadmin@gmail.com',
     password: 'agencyadmin',
     password_confirmation: 'agencyadmin',
-    address: 'IF',
-    phone_number: '+380964483927',
     role: 'agency_admin',
-    own_agency_attributes: { name: 'Hairstyle' }
+    own_agency_attributes: { name: 'Hairstyle', address: 'IF', phone_number: '+380964483927' }
 )
 
 # Agency Employee
@@ -49,13 +47,12 @@ Employee.create(
 )
 
 # Individual Employee
-Employee.create(
-    first_name: 'Individual',
-    last_name: 'Employee',
-    email: 'individualemployee@gmail.com',
-    password: 'individualemployee',
-    password_confirmation: 'individualemployee',
-    address: 'IF',
-    phone_number: '+380964483927',
-    role: 'individual_employee'
+Employee.create!(
+  first_name: 'Petro',
+  last_name: 'Ostapenko',
+  email: 'petttttro@gmail.com',
+  password: 'indemployee',
+  password_confirmation: 'indemployee',
+  role: 'individual_employee',
+  own_agency_attributes: { name: 'Petro Ostapenko', address: 'IF', phone_number: '+380964483927' }
 )

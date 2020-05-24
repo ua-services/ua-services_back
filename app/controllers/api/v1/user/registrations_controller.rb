@@ -52,11 +52,9 @@ class Api::V1::User::RegistrationsController < Devise::RegistrationsController
     case role
     when 'consumer'
       %i[first_name last_name role address phone_number password password_confirmation type]
-    when 'agency_admin'
-      [:first_name, :last_name, :role, :address, :phone_number, :password, :password_confirmation,
-       :type, own_agency_attributes: %i[name email]]
-    when 'individual_employee'
-      %i[first_name last_name role address phone_number password password_confirmation type]
+    when 'agency_admin', 'individual_employee'
+      [:first_name, :last_name, :role, :password, :password_confirmation,
+       :type, own_agency_attributes: %i[name address phone_number]]
     end
   end
 

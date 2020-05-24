@@ -6,18 +6,16 @@ class Employee < User
   has_many :services, through: :employee_services
   has_many :bookings, dependent: :restrict_with_error
 
-  after_create_commit :set_agency_if_agency_admin, on: :create, if: proc { |employee| employee.agency_admin? }
+  after_create_commit :set_agency, on: :create, if: proc { |employee| employee.agency_admin? || employee.individual_employee? }
 
   accepts_nested_attributes_for :employee_information
   accepts_nested_attributes_for :own_agency
 
   delegate :agency_id, to: :employee_information, allow_nil: true
 
-  validates :address, presence: true
-
   private
 
-  def set_agency_if_agency_admin
+  def set_agency
     self.agency = own_agency
   end
 end
