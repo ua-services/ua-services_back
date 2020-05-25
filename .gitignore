@@ -29,5 +29,3 @@
 /config/credentials/development.key
 
 .yardoc/*
-
-/config/secrets/*
