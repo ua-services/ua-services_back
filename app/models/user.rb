@@ -7,6 +7,8 @@ class User < ApplicationRecord
 
   has_many :bookings, dependent: :restrict_with_error
 
+  mount_uploader :avatar, AvatarUploader
+
   enum role: %i[super_admin agency_admin agency_employee individual_employee consumer]
 
   validates :first_name, :last_name, :role, presence: true
