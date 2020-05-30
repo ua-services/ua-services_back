@@ -1,15 +1,3 @@
-# Agency
-Agency.create(
-    name: 'BestMassage',
-    address: 'IF',
-    phone_number: '+380991231238',
-    service_industry: 'Massage',
-    email: 'best_massage@gmail.com',
-    description: 'Best massage in IF',
-    lng: 12.43,
-    lat: 17.54
-)
-
 # Consumer
 User.create(
     first_name: 'Consumer',
@@ -23,7 +11,7 @@ User.create(
 )
 
 # Agency Admin
-Employee.create(
+Employee.create!(
     first_name: 'Agency',
     last_name: 'Admin',
     email: 'agencyadmin@gmail.com',
@@ -48,11 +36,11 @@ Employee.create(
 
 # Individual Employee
 Employee.create!(
-  first_name: 'Petro',
-  last_name: 'Ostapenko',
-  email: 'petttttro@gmail.com',
-  password: 'indemployee',
-  password_confirmation: 'indemployee',
+  first_name: 'Individual',
+  last_name: 'Employee',
+  email: 'individualemployee@gmail.com',
+  password: 'individualemployee',
+  password_confirmation: 'individualemployee',
   role: 'individual_employee',
-  own_agency_attributes: { name: 'Petro Ostapenko', address: 'IF', phone_number: '+380964483927' }
+  own_agency_attributes: { name: 'Individual Employee', address: 'IF', phone_number: '+380964483927' }
 )
