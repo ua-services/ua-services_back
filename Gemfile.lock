@@ -380,7 +380,7 @@ GEM
     pundit (2.1.0)
       activesupport (>= 3.0.0)
     r_creds (1.0.1)
-    rack (2.2.2)
+    rack (2.2.3)
     rack-cors (1.0.6)
       rack (>= 1.6.0)
     rack-test (1.1.0)
